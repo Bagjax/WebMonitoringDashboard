@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dotnet\\menyala\\menyala.csproj": {}
+    "D:\\Dotnet\\WebMonitoringDashboard\\menyala.csproj": {}
   },
   "projects": {
-    "C:\\dotnet\\menyala\\menyala.csproj": {
+    "D:\\Dotnet\\WebMonitoringDashboard\\menyala.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dotnet\\menyala\\menyala.csproj",
+        "projectUniqueName": "D:\\Dotnet\\WebMonitoringDashboard\\menyala.csproj",
         "projectName": "menyala",
-        "projectPath": "C:\\dotnet\\menyala\\menyala.csproj",
-        "packagesPath": "C:\\Users\\ikhsa\\.nuget\\packages\\",
-        "outputPath": "C:\\dotnet\\menyala\\obj\\",
+        "projectPath": "D:\\Dotnet\\WebMonitoringDashboard\\menyala.csproj",
+        "packagesPath": "C:\\Users\\BagjaX\\.nuget\\packages\\",
+        "outputPath": "D:\\Dotnet\\WebMonitoringDashboard\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ikhsa\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\BagjaX\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,11 +34,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -95,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

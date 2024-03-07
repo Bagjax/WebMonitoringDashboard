@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using menyala.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-
+// balainame detail
 public class ApiController : Controller
 {
     public class ApiResponse

@@ -1,5 +1,5 @@
 // Inisialisasi peta
-var map = L.map('map').setView([-6.89921, 107.711404], 13);
+var map = L.map('map').setView([-6.89921, 107.707], 13);
 
 // Tambahkan tile layer OSM
 // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,7 +29,7 @@ var musi1 = L.polygon(
 
 var musi1 = L.marker([-6.88121, 107.719404], {
   icon: L.icon({
-    iconUrl: '/Assets/img/ampera.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/ampera.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [80, 140], // Ukuran icon
   }),
 });
@@ -118,7 +118,7 @@ var hitam = L.marker([-6.9149, 107.626378], {
 
 // var hitam = L.marker([-6.91657, 107.626378], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/hitam1.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/hitam1.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [15, 65], // Ukuran icon
 //   }),
 // });
@@ -147,7 +147,7 @@ var rengas = L.marker([-6.9149, 107.631178], {
 
 // var rengas = L.marker([-6.9168, 107.631178], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/rengas1.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/rengas1.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [15, 60], // Ukuran icon
 //   }),
 // });
@@ -176,7 +176,7 @@ var lacak = L.marker([-6.9149, 107.636278], {
 
 // var lacak = L.marker([-6.917, 107.636278], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/lacak.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/lacak.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [15, 60], // Ukuran icon
 //   }),
 // });
@@ -205,7 +205,7 @@ var danau = L.marker([-6.9149, 107.641278], {
 
 // var danau = L.marker([-6.917, 107.641278], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/danau.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/danau.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [15, 60], // Ukuran icon
 //   }),
 // });
@@ -232,7 +232,7 @@ var ijuk = L.marker([-6.92921, 107.643878], {
 
 // var ijuk = L.marker([-6.93121, 107.643878], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/ijuk.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/ijuk.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [15, 60], // Ukuran icon
 //   }),
 // });
@@ -259,7 +259,7 @@ var tenang = L.marker([-6.9149, 107.646278], {
 
 // var tenang = L.marker([-6.917, 107.646278], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/tenang.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/tenang.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [15, 60], // Ukuran icon
 //   }),
 // });
@@ -286,7 +286,7 @@ var kebala = L.marker([-6.9133, 107.653678], {
 
 // var kebala = L.marker([-6.9145, 107.653678], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/kebala.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/kebala.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [35, 85], // Ukuran icon
 //   }),
 // });
@@ -313,7 +313,7 @@ var pedado = L.marker([-6.929, 107.653678], {
 
 // var pedado = L.marker([-6.931, 107.654278], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/pedado.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/pedado.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [20, 60], // Ukuran icon
 //   }),
 // });
@@ -332,7 +332,7 @@ var lambidaro = L.polygon(
 
 var lambidaro = L.marker([-6.92421, 107.665878], {
   icon: L.icon({
-    iconUrl: '/Assets/img/jembatan.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/jembatan.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 65], // Ukuran icon
   }),
 });
@@ -368,7 +368,7 @@ var lambidaro2 = L.marker([-6.88921, 107.653678], {
 
 // var lambidaro2 = L.marker([-6.88921, 107.653878], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/lambidaro.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/lambidaro.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [35, 105], // Ukuran icon
 //   }),
 // });
@@ -376,7 +376,7 @@ var lambidaro2 = L.marker([-6.88921, 107.653678], {
 
 var lambidaro2 = L.marker([-6.89721, 107.664178], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -413,7 +413,7 @@ var sekanak1 = L.marker([-6.89721, 107.686504], {
 
 // var sekanak1 = L.marker([-6.89521, 107.684104], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/sekanak.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/sekanak.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [60, 18], // Ukuran icon
 //   }),
 // });
@@ -442,7 +442,7 @@ var siti = L.polygon(
 
 var siti = L.marker([-6.88821, 107.671804], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -461,7 +461,7 @@ var kambang = L.polygon(
 
 var sekanak2 = L.marker([-6.901, 107.694404], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -469,7 +469,7 @@ sekanak2.addTo(map);
 
 var sekanak2 = L.marker([-6.901, 107.686404], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -498,7 +498,7 @@ var kedukan1 = L.polygon(
 
 var kedukan1 = L.marker([-6.9239, 107.703404], {
   icon: L.icon({
-    iconUrl: '/Assets/img/jembatan1.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/jembatan1.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [40, 55], // Ukuran icon
   }),
 });
@@ -524,7 +524,7 @@ var kedukan2 = L.marker([-6.92, 107.691], {
 
 // var kedukan2 = L.marker([-6.9179, 107.688404], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/kedukan.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/kedukan.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [60, 20], // Ukuran icon
 //   }),
 // });
@@ -551,7 +551,7 @@ var keramasan = L.marker([-6.93321, 107.681404], {
 
 // var keramasan = L.marker([-6.93321, 107.681404], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/keramasan.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/keramasan.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [20, 85], // Ukuran icon
 //   }),
 // });
@@ -578,7 +578,7 @@ var gantung = L.marker([-6.94221, 107.670978], {
 
 // var gantung = L.marker([-6.94121, 107.668378], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/gantung.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/gantung.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [60, 25], // Ukuran icon
 //   }),
 // });
@@ -605,7 +605,7 @@ var ogan = L.marker([-6.93921, 107.70069], {
 
 // var ogan = L.marker([-6.94121, 107.7], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/ogan.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/ogan.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [30, 100], // Ukuran icon
 //   }),
 // });
@@ -632,7 +632,7 @@ var pegayut = L.marker([-6.93281, 107.69304], {
 
 // var pegayut = L.marker([-6.93221, 107.689104], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/pegayut.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/pegayut.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [65, 25], // Ukuran icon
 //   }),
 // });
@@ -697,7 +697,7 @@ var kedukanulu = L.marker([-6.92121, 107.728104], {
 
 // var kedukanulu = L.marker([-6.92121, 107.728104], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/kedukanulu1.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/kedukanulu1.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [35, 105], // Ukuran icon
 //   }),
 // });
@@ -723,7 +723,7 @@ var kedukanulu1 = L.marker([-6.93721, 107.725804], {
 
 // var kedukanulu1 = L.marker([-6.93721, 107.725804], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/kedukan1.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/kedukan1.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [100, 40], // Ukuran icon
 //   }),
 // });
@@ -750,7 +750,7 @@ var aur = L.marker([-6.89521, 107.731704], {
 
 // var aur = L.marker([-6.89621, 107.731404], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/aur.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/aur.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [25, 100], // Ukuran icon
 //   }),
 // });
@@ -777,7 +777,7 @@ var bendung = L.marker([-6.87521, 107.728804], {
 
 // var bendung = L.marker([-6.87521, 107.728804], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/bendung.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/bendung.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [18, 75], // Ukuran icon
 //   }),
 // });
@@ -785,7 +785,7 @@ var bendung = L.marker([-6.87521, 107.728804], {
 
 var bendung = L.marker([-6.85821, 107.730804], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -793,7 +793,7 @@ bendung.addTo(map);
 
 var bendung = L.marker([-6.85121, 107.730804], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -811,7 +811,7 @@ var bendung1 = L.polygon(
 
 var bendung1 = L.marker([-6.87221, 107.742804], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -829,7 +829,7 @@ var bendung2 = L.polygon(
 
 var bendung2 = L.marker([-6.86221, 107.745804], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -847,7 +847,7 @@ var bendung3 = L.polygon(
 
 var bendung3 = L.marker([-6.85621, 107.71804], {
   icon: L.icon({
-    iconUrl: '/Assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/tambak.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [45, 40], // Ukuran icon
   }),
 });
@@ -874,7 +874,7 @@ var sriguna = L.marker([-6.89521, 107.739104], {
 
 // var sriguna = L.marker([-6.89621, 107.738404], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/sriguna.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/sriguna.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [30, 100], // Ukuran icon
 //   }),
 // });
@@ -882,7 +882,7 @@ var sriguna = L.marker([-6.89521, 107.739104], {
 
 var sriguna = L.marker([-6.88621, 107.746404], {
   icon: L.icon({
-    iconUrl: '/Assets/img/jembatan2.png', // Ganti dengan path atau URL icon yang sesuai
+    iconUrl: '/assets/img/jembatan2.png', // Ganti dengan path atau URL icon yang sesuai
     iconSize: [40, 55], // Ukuran icon
   }),
 });
@@ -909,7 +909,7 @@ var lawang = L.marker([-6.875, 107.759204], {
 
 // var lawang = L.marker([-6.876, 107.759204], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/lawang.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/lawang.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [30, 100], // Ukuran icon
 //   }),
 // });
@@ -936,7 +936,7 @@ var buah = L.marker([-6.8758, 107.766204], {
 
 // var buah = L.marker([-6.876, 107.766204], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/buah.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/buah.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [30, 100], // Ukuran icon
 //   }),
 // });
@@ -963,7 +963,7 @@ var juaro = L.marker([-6.8772, 107.772204], {
 
 // var juaro = L.marker([-6.8795, 107.772204], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/juaro.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/juaro.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [18, 55], // Ukuran icon
 //   }),
 // });
@@ -990,7 +990,7 @@ var komering = L.marker([-6.9, 107.776504], {
 
 // var komering = L.marker([-6.9, 107.776504], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/komering.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/komering.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [35, 115], // Ukuran icon
 //   }),
 // });
@@ -1017,7 +1017,7 @@ var prupian = L.marker([-6.896, 107.764804], {
 
 // var prupian = L.marker([-6.895, 107.761804], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/prupian.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/prupian.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [65, 20], // Ukuran icon
 //   }),
 // });
@@ -1044,7 +1044,7 @@ var batang = L.marker([-6.8774, 107.777204], {
 
 // var batang = L.marker([-6.879, 107.777204], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/batang.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/batang.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [18, 60], // Ukuran icon
 //   }),
 // });
@@ -1071,7 +1071,7 @@ var selincah = L.marker([-6.8774, 107.782204], {
 
 // var selincah = L.marker([-6.878, 107.782204], {
 //   icon: L.icon({
-//     iconUrl: '/Assets/img/selincah.png', // Ganti dengan path atau URL icon yang sesuai
+//     iconUrl: '/assets/img/selincah.png', // Ganti dengan path atau URL icon yang sesuai
 //     iconSize: [18, 75], // Ukuran icon
 //   }),
 // });

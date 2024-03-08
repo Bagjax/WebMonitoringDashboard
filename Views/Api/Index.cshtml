@@ -125,39 +125,86 @@
                     </tbody>
                 </table>
             </div>
+            <div id="lastUpdateTime" style="margin-top: 10px; color: gray;"></div>
           </div>
         </div>
 
         @section Scripts {
-            <script>
-                $(document).ready(function () {
-                $('#offpos').DataTable({
-                    "processing": true,
-                    "serverSide": true,
-                    "ajax": {
-                        "url": "/Api/GetList",
-                        "type": "POST",
-                        "datatype": "json"
+    <script>
+        $(document).ready(function () {
+            // Function to refresh DataTable and update last update time
+            function refreshDataTable() {
+                $('#offpos').DataTable().ajax.reload(null, false);
+                updateLastUpdateTime();
+            }
+
+            // Function to update last update time
+            function updateLastUpdateTime() {
+                var now = new Date();
+                var formattedTime = now.toLocaleString();
+
+                // Mendapatkan waktu terakhir dari respons Ajax
+                $.ajax({
+                    url: '/Api/GetLastUpdateTime', // Ganti dengan URL yang sesuai
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response) {
+                        var lastUpdateTimeString = response.lastUpdateTime; // Ganti dengan nama properti yang sesuai
+                        var lastUpdateTime = moment(lastUpdateTimeString);
+
+                        // Format lastUpdateTime sesuai kebutuhan, misalnya "DD/MM/YYYY HH:mm:ss"
+                        var formattedLastUpdateTime = lastUpdateTime.format("DD/MM/YYYY HH:mm:ss");
+
+                        // Perhatikan penggunaan ID yang benar di sini
+                        $('#lastUpdateTime').text('Last Updated: ' + formattedLastUpdateTime);
                     },
-                    "columns": [
-                        { "data": "nomor", "name": "Nomor", "autoWidth": true, "className": "text-center" },
-                        { "data": "balaiName", "name": "BalaiName", "autoWidth": true },
-                        { "data": "jumlahPos", "name": "JumlahPos", "autoWidth": true, "className": "text-center" },
-                        { "data": "jumlahPosOnline", "name": "JumlahPosOnline", "autoWidth": true, "className": "text-center" },
-                        { "data": "jumlahPosOffline", "name": "JumlahPosOffline", "autoWidth": true, "className": "text-center" },
-                        {
-                            "data": "balaiName",
-                            "render": function (data) {
-                                return '<a href="/Api/Tabel/' + data + '"><i class="bi bi-eye"></i></a>';
-                            },
-                            "orderable": false,
-                            "searchable": false,
-                            "className": "text-center"
-                        }
-                    ]
+                    error: function (error) {
+                        console.error('Error getting last update time:', error);
+                    }
                 });
+            }
+
+            // Initialize DataTable
+            var dataTable = $('#offpos').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "/Api/GetList",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "nomor", "name": "Nomor", "autoWidth": true, "className": "text-center" },
+                    { "data": "balaiName", "name": "BalaiName", "autoWidth": true },
+                    { "data": "jumlahPos", "name": "JumlahPos", "autoWidth": true, "className": "text-center" },
+                    { "data": "jumlahPosOnline", "name": "JumlahPosOnline", "autoWidth": true, "className": "text-center" },
+                    { "data": "jumlahPosOffline", "name": "JumlahPosOffline", "autoWidth": true, "className": "text-center" },
+                    {
+                        "data": "balaiName",
+                        "render": function (data) {
+                            return '<a href="/Api/Tabel/' + data + '"><i class="bi bi-eye"></i></a>';
+                        },
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "text-center"
+                    }
+                ]
             });
-            </script>
-        }
+
+            // Set up auto-refresh using setInterval
+            var autoRefreshInterval = setInterval(function () {
+                refreshDataTable();
+            }, 5000); // 5 seconds in milliseconds
+
+            // Stop auto-refresh when the page is unloaded
+            $(window).on('beforeunload', function () {
+                clearInterval(autoRefreshInterval);
+            });
+
+            // Initial update of last update time
+            updateLastUpdateTime();
+        });
+    </script>
+}
 
        

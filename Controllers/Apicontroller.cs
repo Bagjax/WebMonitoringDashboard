@@ -190,14 +190,15 @@ public class ApiController : Controller
     }
 
 [HttpGet]
-    public ActionResult GetLastUpdateTime()
-    {
-        // Mendapatkan waktu terakhir pembaharuan dari sumber data Anda
-        var lastUpdateTime = DateTime.Now; // Ganti dengan logika sesuai kebutuhan
+public ActionResult GetLastUpdateTime()
+{
+    // Mendapatkan waktu terakhir pembaharuan dari sumber data Anda
+    var lastUpdateTime = DateTime.Now; // Ganti dengan logika sesuai kebutuhan
 
-        // Mengembalikan waktu terakhir dalam format yang sesuai
-        return Json(new { lastUpdateTime = lastUpdateTime.ToString("yyyy-MM-ddTHH:mm:ss") });
-    }
+    // Mengembalikan waktu terakhir dalam format yang sesuai
+    return Json(new { lastUpdateTime = lastUpdateTime.ToString("yyyy-MM-ddTHH:mm:ss") });
+}
+
 
     // public async Task<ActionResult> Tabel() {
     //     string apiUrl = "http://localhost:5000/Station/All";

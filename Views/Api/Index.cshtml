@@ -193,7 +193,7 @@
             // Set up auto-refresh using setInterval
             var autoRefreshInterval = setInterval(function () {
                 refreshDataTable();
-            }, 5000); // 5 seconds in milliseconds
+            }, 30000); // 5 seconds in milliseconds
 
             // Stop auto-refresh when the page is unloaded
             $(window).on('beforeunload', function () {

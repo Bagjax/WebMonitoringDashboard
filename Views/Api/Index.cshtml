@@ -94,116 +94,107 @@
         <br>
 
         <div class="card mb-3">
-          <div class="card-header" style="background: #a3c2e0;">
-              <h4 class="card-title mb-0 text-white"><i class="fa fa-water me-1"></i> SUMMARY</h4>
-          </div>
-          <div class="card-body">
-              <div class="table-responsive">
-                  <table id="offpos" class="display table table-sm table-bordered">
-                      <thead style="background: #eed388;">
-                          <tr>
-                            <th class="text-center">No.</th>
-                            <th class="text-center">Nama Instansi</th>
-                            <th class="text-center">Total Pos</th>
-                            <th class="text-center">Pos Online</th>
-                            <th class="text-center">Pos Offline</th>
-                            <th class="text-center">Detail</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @* @foreach (var item in Model) {
-                            <tr>
-                                <td class="text-center">@j</td>
-                                <td class="text-left">@item.balaiName</td>
-                                <td class="text-center">@item.JumlahPos</td>
-                                <td class="text-center">@item.JumlahPosOnline</td>
-                                <td class="text-center">@item.JumlahPosOffline</td>
-                                <th class="text-center"><a asp-controller="Api" asp-action="Tabel"><i class="bi bi-eye"></i></a></th>
-                            </tr>
-                            j++;
-                        } *@
-                    </tbody>
-                </table>
+            <div class="card-header" style="background: #a3c2e0;">
+                <h4 class="card-title mb-0 text-white"><i class="fa fa-water me-1"></i> SUMMARY</h4>
             </div>
-          </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="offpos" class="display table table-sm table-bordered">
+                        <thead style="background: #eed388;">
+                            <tr>
+                                <th class="text-center">No.</th>
+                                <th class="text-center">Nama Instansi</th>
+                                <th class="text-center">Total Pos</th>
+                                <th class="text-center">Pos Online</th>
+                                <th class="text-center">Pos Offline</th>
+                                <th class="text-center">Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @* Your loop to generate table rows here *@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
+
         @section Scripts {
-    <script>
-        $(document).ready(function () {
-            // Function to refresh DataTable and update last update time
-            function refreshDataTable() {
-                $('#offpos').DataTable().ajax.reload(null, false);
-                updateLastUpdateTime();
-            }
+        <script>
+            $(document).ready(function () {
+                // Function to refresh DataTable and update last update time
+                function refreshDataTable() {
+                    $('#offpos').DataTable().ajax.reload(null, false);
+                    updateLastUpdateTime();
+                }
 
-            // Function to update last update time
-            function updateLastUpdateTime() {
-                var now = new Date();
-                var formattedTime = now.toLocaleString();
+                // Function to update last update time
+                function updateLastUpdateTime() {
+                    var now = new Date();
+                    var formattedTime = now.toLocaleString();
 
-                // Mendapatkan waktu terakhir dari respons Ajax
-                $.ajax({
-                    url: '/Api/GetLastUpdateTime', // Ganti dengan URL yang sesuai
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (response) {
-                        var lastUpdateTimeString = response.lastUpdateTime; // Ganti dengan nama properti yang sesuai
-                        var lastUpdateTime = moment(lastUpdateTimeString);
+                    // Mendapatkan waktu terakhir dari respons Ajax
+                    $.ajax({
+                        url: '/Api/GetLastUpdateTime', // Ganti dengan URL yang sesuai
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (response) {
+                            var lastUpdateTimeString = response.lastUpdateTime; // Ganti dengan nama properti yang sesuai
+                            var lastUpdateTime = moment(lastUpdateTimeString);
 
-                        // Format lastUpdateTime sesuai kebutuhan, misalnya "DD/MM/YYYY HH:mm:ss"
-                        var formattedLastUpdateTime = lastUpdateTime.format("DD/MM/YYYY HH:mm:ss");
+                            // Format lastUpdateTime sesuai kebutuhan, misalnya "DD/MM/YYYY HH:mm:ss"
+                            var formattedLastUpdateTime = lastUpdateTime.format("DD/MM/YYYY HH:mm:ss");
 
-                        // Perhatikan penggunaan ID yang benar di sini
-                        $('#lastUpdateTime').text('Last Updated: ' + formattedLastUpdateTime);
-                    },
-                    error: function (error) {
-                        console.error('Error getting last update time:', error);
-                    }
-                });
-            }
-
-            // Initialize DataTable
-            var dataTable = $('#offpos').DataTable({
-                "processing": true,
-                "serverSide": true,
-                "ajax": {
-                    "url": "/Api/GetList",
-                    "type": "POST",
-                    "datatype": "json"
-                },
-                "columns": [
-                    { "data": "nomor", "name": "Nomor", "autoWidth": true, "className": "text-center" },
-                    { "data": "balaiName", "name": "BalaiName", "autoWidth": true },
-                    { "data": "jumlahPos", "name": "JumlahPos", "autoWidth": true, "className": "text-center" },
-                    { "data": "jumlahPosOnline", "name": "JumlahPosOnline", "autoWidth": true, "className": "text-center" },
-                    { "data": "jumlahPosOffline", "name": "JumlahPosOffline", "autoWidth": true, "className": "text-center" },
-                    {
-                        "data": "balaiName",
-                        "render": function (data) {
-                            return '<a href="/Api/Tabel/' + data + '"><i class="bi bi-eye"></i></a>';
+                            // Perhatikan penggunaan ID yang benar di sini
+                            $('#lastUpdateTime').text('Last Updated: ' + formattedLastUpdateTime);
                         },
-                        "orderable": false,
-                        "searchable": false,
-                        "className": "text-center"
-                    }
-                ]
+                        error: function (error) {
+                            console.error('Error getting last update time:', error);
+                        }
+                    });
+                }
+
+                // Initialize DataTable
+                var dataTable = $('#offpos').DataTable({
+                    "processing": true,
+                    "serverSide": true,
+                    "ajax": {
+                        "url": "/Api/GetList",
+                        "type": "POST",
+                        "datatype": "json"
+                    },
+                    "columns": [
+                        { "data": "nomor", "name": "Nomor", "autoWidth": true, "className": "text-center" },
+                        { "data": "balaiName", "name": "BalaiName", "autoWidth": true },
+                        { "data": "jumlahPos", "name": "JumlahPos", "autoWidth": true, "className": "text-center" },
+                        { "data": "jumlahPosOnline", "name": "JumlahPosOnline", "autoWidth": true, "className": "text-center" },
+                        { "data": "jumlahPosOffline", "name": "JumlahPosOffline", "autoWidth": true, "className": "text-center" },
+                        {
+                            "data": "balaiName",
+                            "render": function (data) {
+                                return '<a href="/Api/Tabel/' + data + '"><i class="bi bi-eye"></i></a>';
+                            },
+                            "orderable": false,
+                            "searchable": false,
+                            "className": "text-center"
+                        }
+                    ]
+                });
+
+                // Set up auto-refresh using setInterval
+                var autoRefreshInterval = setInterval(function () {
+                    refreshDataTable();
+                }, 30000); // 5 seconds in milliseconds
+
+                // Stop auto-refresh when the page is unloaded
+                $(window).on('beforeunload', function () {
+                    clearInterval(autoRefreshInterval);
+                });
+
+                // Initial update of last update time
+                updateLastUpdateTime();
             });
-
-            // Set up auto-refresh using setInterval
-            var autoRefreshInterval = setInterval(function () {
-                refreshDataTable();
-            }, 30000); // 5 seconds in milliseconds
-
-            // Stop auto-refresh when the page is unloaded
-            $(window).on('beforeunload', function () {
-                clearInterval(autoRefreshInterval);
-            });
-
-            // Initial update of last update time
-            updateLastUpdateTime();
-        });
-    </script>
-}
+        </script>
+    }
 
        

@@ -2,199 +2,336 @@
     ViewData["Title"] = "Home | Dashboard";
 }
 
-@* @section Scripts {
-            <script>
-                $(document).ready(function () {
-                    $('#offpos').DataTable();
-                    console.log("document");
-                });
-            </script>
-        } *@
-
 @model IEnumerable<Api>
 
 
 <main id="main" class="main">
-      <div class="pagetitle">
-        <h1>Dashboard</h1>
-        <nav>
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a asp-controller="Api" asp-action="Index">Home</a></li>
-            <li class="breadcrumb-item active">Dashboard</li>
-          </ol>
-        </nav>
-      </div>
-      <!-- End Page Title -->
+    <div class="pagetitle">
+    <h1>Dashboard</h1>
+    <nav>
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Api" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item active">Dashboard</li>
+        </ol>
+    </nav>
+    </div>
 
-      <section class="section dashboard">
+    <!-- End Page Title -->
+    @* <section>
+        <div class="container">
             <div class="row">
                 <!-- Kartu Sebelah Kiri -->
                 <div class="col-md-3">
                     <!-- Duga Air Card -->
-                    <div class="card info-duga">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Pos Duga Air</h5>
-                            <div class="text-center">
-                                <h6>145</h6>
-                            </div>
+                    <div class="counter blue">
+                        <div class="counter-content">
+                            <div class="counter-value"></div>
                         </div>
+                        <h3 id="totalDugaAir">Pos Duga Air</h3>
                     </div>
                 </div>
 
                 <div class="col-md-3">
                     <!-- Curah Hujan Card -->
-                    <div class="card info-curah">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Pos Curah Hujan</h5>
-                            <div class="text-center">
-                                <h6>225</h6>
-                            </div>
+                    <div class="counter green">
+                        <div class="counter-content">
+                           <div class="counter-value"></div>
                         </div>
+                        <h3 id="totalCurahHujan">Pos Curah Hujan</h3>
                     </div>
                 </div>
 
                 <!-- Kartu Sebelah Kanan -->
                 <div class="col-md-3">
                     <!-- Klimatologi Card -->
-                    <div class="card info-klimatologi">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Pos Klimatologi</h5>
-                            <div class="text-center">
-                                <h6>10</h6>
-                            </div>
+                    <div class="counter red">
+                        <div class="counter-content">
+                            <div class="counter-value"></div>
                         </div>
+                        <h3 id="totalKlimatologi">Pos Klimatologi</h3>
                     </div>
                 </div>
 
                 <div class="col-md-3">
-                    <!-- Klimatologi Card -->
-                    <div class="card info-total">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Total Pos</h5>
-                            <div class="text-center">
-                                <h6>380</h6>
-                            </div>
+                    <!-- Total Pos Card -->
+                    <div class="counter orange">
+                        <div class="counter-content">
+                            <div class="counter-value" ></div>
+                        </div>
+                        <h3 id="totalPos">Total Pos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> *@
+
+    <section class="section dashboard">
+        <div class="row">
+            <!-- Kartu Sebelah Kiri -->
+            <div class="col-md-3">
+                <!-- Duga Air Card -->
+                <div class="card info-duga">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Pos Duga Air</h5>
+                        <div class="text-center">
+                            <h6 id="totalDugaAir"></h6>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <br>
-
-        <div class="card mb-3">
-            <div class="card-header" style="background: #a3c2e0;">
-                <h4 class="card-title mb-0 text-white text-center"><i class="fa fa-water me-1"></i>SKEMA SUNGAI KOTA PALEMBANG</h4>
+            <div class="col-md-3">
+                <!-- Curah Hujan Card -->
+                <div class="card info-curah">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Pos Curah Hujan</h5>
+                        <div class="text-center">
+                            <h6 id="totalCurahHujan"></h6>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <div id="map" style="width: 100%; height: 100vh; margin: 0 auto;"></div>
-            </div>
-        </div>
 
-        <br>
-
-        <div class="card mb-3">
-            <div class="card-header" style="background: #a3c2e0;">
-                <h4 class="card-title mb-0 text-white"><i class="fa fa-water me-1"></i> SUMMARY</h4>
+            <!-- Kartu Sebelah Kanan -->
+            <div class="col-md-3">
+                <!-- Klimatologi Card -->
+                <div class="card info-klimatologi">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Pos Klimatologi</h5>
+                        <div class="text-center">
+                            <h6 id ="totalKlimatologi"></h6>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="offpos" class="display table table-sm table-bordered">
-                        <thead style="background: #eed388;">
-                            <tr>
-                                <th class="text-center">No.</th>
-                                <th class="text-center">Nama Instansi</th>
-                                <th class="text-center">Total Pos</th>
-                                <th class="text-center">Pos Online</th>
-                                <th class="text-center">Pos Offline</th>
-                                <th class="text-center">Detail</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @* Your loop to generate table rows here *@
-                        </tbody>
-                    </table>
+
+            <div class="col-md-3">
+                <!-- Klimatologi Card -->
+                <div class="card info-total">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Total Pos</h5>
+                        <div class="text-center">
+                            <h6 id="totalPos"></h6>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
+    <br>
 
-        @section Scripts {
-        <script>
-            $(document).ready(function () {
-                // Function to refresh DataTable and update last update time
-                function refreshDataTable() {
-                    $('#offpos').DataTable().ajax.reload(null, false);
-                    updateLastUpdateTime();
-                }
+    <div class="card mb-3">
+        <div class="card-header" style="background: #a3c2e0;">
+            <h4 class="card-title mb-0 text-white text-center"><i class="fa fa-water me-1"></i>SKEMA SUNGAI KOTA PALEMBANG</h4>
+        </div>
+        <div class="card-body">
+            <div id="map" style="width: 100%; height: 100vh; margin: 0 auto;"></div>
+        </div>
+    </div>
 
-                // Function to update last update time
-                function updateLastUpdateTime() {
-                    var now = new Date();
-                    var formattedTime = now.toLocaleString();
+    <br>
 
-                    // Mendapatkan waktu terakhir dari respons Ajax
-                    $.ajax({
-                        url: '/Api/GetLastUpdateTime', // Ganti dengan URL yang sesuai
-                        type: 'GET',
-                        dataType: 'json',
-                        success: function (response) {
-                            var lastUpdateTimeString = response.lastUpdateTime; // Ganti dengan nama properti yang sesuai
-                            var lastUpdateTime = moment(lastUpdateTimeString);
+    <div class="card mb-3">
+        <div class="card-header" style="background: #a3c2e0;">
+            <h4 class="card-title mb-0 text-white"><i class="fa fa-water me-1"></i> SUMMARY</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table id="offpos" class="display table table-sm table-bordered table-responsive-sm">
+                    <thead>
+                        <tr>
+                            <th class="text-center">No.</th>
+                            <th class="text-center">Nama Balai</th>
+                            <th class="text-center">Instansi</th>
+                            <th class="text-center">Pos Online</th>
+                            <th class="text-center">Pos Offline</th>
+                            <th class="text-center">Total Pos</th>
+                            <th class="text-center">Detail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Your data rows go here -->
+                    </tbody>
+                </table>
+            </div>
+            <div id="lastUpdateTime" style="margin-top: 10px; color: gray;"></div>
+        </div>
+    </div>
+</main>
 
-                            // Format lastUpdateTime sesuai kebutuhan, misalnya "DD/MM/YYYY HH:mm:ss"
-                            var formattedLastUpdateTime = lastUpdateTime.format("DD/MM/YYYY HH:mm:ss");
-
-                            // Perhatikan penggunaan ID yang benar di sini
-                            $('#lastUpdateTime').text('Last Updated: ' + formattedLastUpdateTime);
-                        },
-                        error: function (error) {
-                            console.error('Error getting last update time:', error);
-                        }
-                    });
-                }
-
-                // Initialize DataTable
-                var dataTable = $('#offpos').DataTable({
-                    "processing": true,
-                    "serverSide": true,
-                    "ajax": {
-                        "url": "/Api/GetList",
-                        "type": "POST",
-                        "datatype": "json"
+@section Scripts {
+    <!-- Include jQuery and Moment.js -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <!-- Include DataTables -->
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Fungsi untuk memperbarui jumlah pos
+            function updateTotalPos() {
+                $.ajax({
+                    url: '/Api/GetTotalPos',
+                    type: 'POST',
+                    success: function(response) {
+                        // Update jumlah pos di dalam elemen HTML
+                        $('#totalPos').text(response.totalPos);
                     },
-                    "columns": [
-                        { "data": "nomor", "name": "Nomor", "autoWidth": true, "className": "text-center" },
-                        { "data": "balaiName", "name": "BalaiName", "autoWidth": true },
-                        { "data": "jumlahPos", "name": "JumlahPos", "autoWidth": true, "className": "text-center" },
-                        { "data": "jumlahPosOnline", "name": "JumlahPosOnline", "autoWidth": true, "className": "text-center" },
-                        { "data": "jumlahPosOffline", "name": "JumlahPosOffline", "autoWidth": true, "className": "text-center" },
-                        {
-                            "data": "balaiName",
-                            "render": function (data) {
-                                return '<a href="/Api/Tabel/' + data + '"><i class="bi bi-eye"></i></a>';
-                            },
-                            "orderable": false,
-                            "searchable": false,
-                            "className": "text-center"
-                        }
-                    ]
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        // Handle error jika diperlukan
+                    }
                 });
 
-                // Set up auto-refresh using setInterval
-                var autoRefreshInterval = setInterval(function () {
-                    refreshDataTable();
-                }, 30000); // 5 seconds in milliseconds
-
-                // Stop auto-refresh when the page is unloaded
-                $(window).on('beforeunload', function () {
-                    clearInterval(autoRefreshInterval);
+                $.ajax({
+                    url: '/Api/GetTotalDugaAir',
+                    type: 'POST',
+                    success: function(response) {
+                        // Tampilkan jumlah pos duga air
+                        $('#totalDugaAir').text(response.totalDugaAir);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        // Handle error jika diperlukan
+                        $('#totalDugaAir').text('Error');
+                    }
                 });
+                $.ajax({
+                    url: '/Api/GetTotalCurahHujan',
+                    type: 'POST',
+                    success: function(response) {
+                        // Tampilkan jumlah pos duga air
+                        $('#totalCurahHujan').text(response.totalCurahHujan);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        // Handle error jika diperlukan
+                        $('#totalCurahHujan').text('Error');
+                    }
+                });
+                $.ajax({
+                    url: '/Api/GetTotalKlimatologi',
+                    type: 'POST',
+                    success: function(response) {
+                        // Tampilkan jumlah pos duga air
+                        $('#totalKlimatologi').text(response.totalKlimatologi);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                        // Handle error jika diperlukan
+                        $('#totalKlimatologi').text('Error');
+                    }
+                });
+                }
 
-                // Initial update of last update time
+                // Panggil fungsi untuk memperbarui jumlah pos saat halaman dimuat
+                updateTotalPos();
+
+            // Function to refresh DataTable and update last update time
+            function refreshDataTable() {
+                $('#offpos').DataTable().ajax.reload(null, false);
                 updateLastUpdateTime();
-            });
-        </script>
-    }
+            }
 
-       
+            // Function to update last update time
+            function updateLastUpdateTime() {
+                var now = new Date();
+                var formattedTime = moment(now).format("DD-MM-YYYY HH:mm:ss");
+
+                // Get the last update time from the Ajax response
+                $.ajax({
+                    url: '/Api/GetLastUpdateTime', // Replace with the appropriate URL
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function (response) {
+                        var lastUpdateTimeString = response.lastUpdateTime; // Replace with the correct property name
+                        if (lastUpdateTimeString) {
+                            var lastUpdateTime = moment(lastUpdateTimeString);
+                            formattedTime = lastUpdateTime.format("DD-MM-YYYY HH:mm:ss");
+                        }
+
+                        // Use the correct ID here
+                        $('#lastUpdateTime').text('Last Updated : ' + formattedTime);
+                    },
+                    error: function (error) {
+                        console.error('Error getting last update time:', error);
+                    }
+                });
+            }
+
+            // Initialize DataTable
+            var dataTable = $('#offpos').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "responsive": true,
+                "info": true,
+                "infoCallback": function (settings, start, end, max, total, pre) {
+                    return "Showing " + (start) + " to " + end + " of " + total + " entries";
+                },
+                "ajax": {
+                    "url": "/Api/GetList",
+                    "type": "POST",
+                    "datatype": "json"
+                },
+                "columns": [
+                    { "data": "nomor", "name": "Nomor", "autoWidth": true, "className": "text-center" },
+                    { "data": "balaiName", "name": "BalaiName", "autoWidth": true },
+                    {
+                        "data": "name",
+                        "render": function (data, type, row) {
+                            if(row.subDomain !== null) {
+                                return '<a href="https://' + row.subDomain + '.higertech.com" target="_blank">' + row.name + '</a>';
+                            } else {
+                                return '';
+                            }
+                        },
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "text-center"
+                     },
+                    { "data": "jumlahPosOnline", "name": "JumlahPosOnline", "autoWidth": true, "className": "text-center" },
+                    { "data": "jumlahPosOffline", "name": "JumlahPosOffline", "autoWidth": true, "className": "text-center" },
+                    { "data": "jumlahPos", "name": "JumlahPos", "autoWidth": true, "className": "text-center" },
+                    {
+                        "data": "balaiName",
+                        "render": function (data) {
+                            return '<a href="/Api/Tabel/' + data + '"><i class="bi bi-eye"></i></a>';
+                        },
+                        "orderable": false,
+                        "searchable": false,
+                        "className": "text-center"
+                    }
+                ]
+            });
+
+            // Set up auto-refresh using setInterval
+            var autoRefreshInterval = setInterval(function () {
+                refreshDataTable();
+            }, 300000); // 5 minutes in milliseconds
+
+            // Stop auto-refresh when the page is unloaded
+            $(window).on('beforeunload', function () {
+                clearInterval(autoRefreshInterval);
+            });
+
+            // Initial update of last update time
+            updateLastUpdateTime();
+        });
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('.counter-value').each(function(){
+                $(this).prop('Counter', 0).animate({
+                    Counter: $(this).text()
+                },{
+                    duration: 3500,
+                    easing: 'swing',
+                    step: function(now){
+                        $(this).text(Math.ceil(now));
+                    }
+                });
+            });
+        });
+    </script> 
+}

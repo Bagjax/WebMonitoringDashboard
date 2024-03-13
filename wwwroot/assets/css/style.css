@@ -46,8 +46,141 @@
   padding: 0;
 }
 
+.counter {
+  min-width: 150px;
+}
+
+/* Untuk membuat peta responsif */
+#map {
+  width: 100%;
+  height: 500px; /* Sesuaikan tinggi sesuai kebutuhan */
+}
+
+/* Untuk membuat tabel responsif */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Untuk memastikan responsivitas pada tata letak summary */
+.card.mb-3 {
+  width: 100%;
+}
+
+/* .counter {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.counter .counter-content {
+  height: 200px;
+  padding: 55px 0 0;
+  margin: 0 0 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.counter .counter-content:before,
+.counter .counter-content:after {
+  content: '';
+  border-radius: 50% 50% 0 50%;
+  border: 4px solid #fff;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  position: absolute;
+  left: 7px;
+  top: 7px;
+  right: 7px;
+  bottom: 7px;
+  z-index: -1;
+}
+
+.counter .counter-content:after {
+  height: 70%;
+  width: 70%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  right: 0;
+  bottom: 0;
+  left: auto;
+  top: auto;
+  z-index: -2;
+} */
+
+/* .counter .counter-icon {
+  color: #999;
+  font-size: 27px;
+  line-height: 27px;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+} */
+
+/* .counter .counter-value {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 95px;
+  width: 95px;
+  height: 95px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.counter h3 {
+  color: #888;
+  font-size: 17px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.counter.blue .counter-value {
+  background: #0c6db1;
+}
+
+.counter.blue .counter-content:after {
+  background: linear-gradient(to right bottom, transparent 60%, #0c6db1 51%);
+}
+
+.counter.green .counter-value {
+  background: #2ecc71;
+}
+
+.counter.green .counter-content:after {
+  background: linear-gradient(to right bottom, transparent 60%, #2ecc71 51%);
+}
+
+.counter.red .counter-value {
+  background: #e74c3c;
+}
+
+.counter.red .counter-content:after {
+  background: linear-gradient(to right bottom, transparent 60%, #e74c3c 51%);
+}
+
+.counter.orange .counter-value {
+  background: #f39c12;
+}
+
+.counter.orange .counter-content:after {
+  background: linear-gradient(to right bottom, transparent 60%, #f39c12 51%);
+}
+
+@media screen and (max-width: 990px) {
+  .counter {
+    margin-bottom: 40px;
+  }
+} */
+
 #offpos {
   padding: 10px;
+}
+
+#offpos thead th {
+  background-color: #eed388;
+  text-align: center;
+  font-weight: bold;
 }
 
 #onpos {
